@@ -1,20 +1,25 @@
-let obj = {
-  result: {
-    activated: true,
-    vipType: "VIP_SUBSCRIBER",
-    products: [
-      {
-        storeType: "APPLE",
-        productId: "com.campmobile.snow.subscribe.onemonth",
-        originalTransactionId: "90002415884112",
-        startDate: 1744990894000,
-        expireDate: 253392455349000,
-        managed: false,
-        status: "ACTIVE"
-      }
-    ],
-    tickets: []
-  }
-};
+var objc = JSON.parse($response.body);
 
-$done({ body: JSON.stringify(obj) });
+    objc = 
+{
+  "result" : {
+    "tickets" : [
+
+    ],
+    "vipType" : "VIP_SUBSCRIBER",
+    "activated" : true,
+    "products" : [
+      {
+        "status" : "ACTIVE",
+        "originalTransactionId" : "90002415884112",
+        "productId" : "com.campmobile.snow.subscribe.onemonth",
+        "startDate" : 1744990894000,
+        "storeType" : "APPLE",
+        "expireDate" : 253392455349000,
+        "managed" : false
+      }
+    ]
+  }
+}
+
+$done({body : JSON.stringify(objc)});
